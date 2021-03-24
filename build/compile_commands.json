@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/jonder/Documents/C++/LanTP/build",
+  "command": "/bin/c++ -g -o CMakeFiles/LanTP.dir/src/main.cpp.o -c /home/jonder/Documents/C++/LanTP/src/main.cpp",
+  "file": "/home/jonder/Documents/C++/LanTP/src/main.cpp"
+},
+{
+  "directory": "/home/jonder/Documents/C++/LanTP/build",
+  "command": "/bin/c++ -g -o CMakeFiles/LanTP.dir/src/Network/TCP/TCP.cpp.o -c /home/jonder/Documents/C++/LanTP/src/Network/TCP/TCP.cpp",
+  "file": "/home/jonder/Documents/C++/LanTP/src/Network/TCP/TCP.cpp"
+}
+]
