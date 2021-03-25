@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jonder/Documents/C++/LanTP/src/Network/NetLibsHeader.hpp
+unistd.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+string.h
+-
+string
+-
+iostream
+-
+
+/home/jonder/Documents/C++/LanTP/src/Network/TCP/TCP.hpp
+../NetLibsHeader.hpp
+/home/jonder/Documents/C++/LanTP/src/Network/NetLibsHeader.hpp
+
+/home/jonder/Documents/C++/LanTP/src/main.cpp
+Network/TCP/TCP.hpp
+/home/jonder/Documents/C++/LanTP/src/Network/TCP/TCP.hpp
+

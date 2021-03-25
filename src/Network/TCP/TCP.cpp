@@ -20,15 +20,6 @@ TCP::TCP(std::string domain, unsigned short port)
     }
 }
 
-TCP::TCP()
-{
-   
-    sockFD = 0;
-
-    sockAdrrOps = {0};
-}
-
-
 std::string TCP::getDomain()
 {   
     return domain;
@@ -39,11 +30,6 @@ unsigned short TCP::getPort()
     return port;
 }
 
-sockaddr_in TCP::getOptions()
-{
-    
-    return sockAdrrOps;
-}
 
 void TCP::Connect()
 {   
@@ -60,17 +46,43 @@ void TCP::Listen(int num)
     listen(sockFD, num);
 } 
 
-void TCP::Recv(char buffer[1024])
+int TCP::Accept()
+{   
+
+    struct sockaddr_in clientSockAddrOps = {0};
+    socklen_t lenAddr;
+
+    return accept(sockFD,(struct sockaddr*)&clientSockAddrOps, &lenAddr);
+}
+
+int TCP::Fork()
 {
-    recv(sockFD, buffer, 1024, 0);
+    return fork();
+}
+
+std::string TCP::Recv(int clientSockFD)
+{   
+    char buffer[1024] = {0};
+
+    recv(clientSockFD, buffer, 1024, 0);
+
+    std::string massage(buffer);
+    bzero(buffer, 1024);
+
+    return massage;
 }
 
 void TCP::Send(std::string massage)
 {
-    send(sockFD, massage.c_str(), massage.size() + 1, 0);
+    send(sockFD, massage.c_str(), sizeof(massage), 0);
 }
 
 void TCP::Close()
+{
+    close(sockFD);
+}
+
+void TCP::Close(int sockFD)
 {
     close(sockFD);
 }
